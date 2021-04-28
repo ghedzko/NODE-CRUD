@@ -19,8 +19,8 @@ app.use(morgan("dev"));
 
 //rutas
 app.use(require("./routes/app"));
-//app.use(require("/support" , "./routes/admin"));
-//app.use(require("/req" , "./routes/autentication"));
+app.use("/support",require(  "./routes/admin"));
+app.use("/req" ,require( "./routes/authentication"));
 
 app.use(express.static(path.join(__dirname,"public")));
 app.listen(app.get("port"),()=>{
